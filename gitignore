@@ -1,0 +1,28 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Model weights / checkpoints
+*.pt
+*.pth
+*.bin
+*.safetensors
+bart_summarizer/
+checkpoint-*/
+
+# Data
+*.csv
+*.tsv
+
+# Environment
+.env
+.venv/
+venv/
+
+# OS
+.DS_Store
+Thumbs.db
