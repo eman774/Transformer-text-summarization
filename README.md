@@ -80,6 +80,8 @@ compared to the from-scratch baseline — despite Phase 2 using a *smaller* trai
 set. This highlights how much of a Transformer's language understanding comes from
 pretraining rather than task-specific training alone.
 
+![Baseline vs Fine-tuned Comparison](Images/baseline_vs_finetuned.png)
+
 ### Sample Output
 
 **Article excerpt**: *[Jerdon's Babbler rediscovery in Myanmar]*
@@ -92,18 +94,39 @@ pretraining rather than task-specific training alone.
 
 ## Visualizations
 
-Both notebooks include:
-- Training vs. validation loss curves
-- ROUGE score distributions / progression across epochs
-- A decoder cross-attention heatmap (Phase 1) showing which source tokens the
-  model attends to while generating each summary token
-- Baseline vs. fine-tuned comparison chart
-- Side-by-side sample prediction tables
+**Phase 1 — From-Scratch Transformer**
+
+Training vs. validation loss:
+
+![Phase 1 Loss Curve](Images/phase1_loss_curve.png)
+
+ROUGE-1/2/L scores on the validation set:
+
+![Phase 1 ROUGE Scores](Images/phase1_rouge_scores.png)
+
+Distribution of ROUGE-1 across validation samples:
+
+![Phase 1 ROUGE-1 Distribution](Images/phase1_rouge1_distribution.png)
+
+Decoder cross-attention heatmap — which source tokens the model attends to while
+generating each summary token:
+
+![Attention Heatmap](Images/attention_heatmap.png)
+
+**Phase 2 — Fine-Tuned BART**
+
+Training vs. validation loss:
+
+![Phase 2 Loss Curve](Images/phase2_bart_loss_curve.png)
+
+Both notebooks also include side-by-side sample prediction tables (reference vs.
+generated summary vs. ROUGE-1 score).
 
 ## Repository Structure
 
 ```
 .
+├── Images/                                             # Visualization assets used in this README
 ├── scratch-transformer-summarization-baseline.ipynb   # Phase 1: from-scratch Transformer
 ├── bart-finetuned-summarization.ipynb                 # Phase 2: fine-tuned BART
 ├── README.md
@@ -145,6 +168,6 @@ This project is licensed under the [MIT License](LICENSE).
 
 ## Author
 
-**Eman Hisham Ismail**
+**Eman Hisham Ismail (Emy)**
 AI / Machine Learning & Deep Learning
 [GitHub](https://github.com/eman774) · [Kaggle](https://www.kaggle.com/emanhishamismail)
